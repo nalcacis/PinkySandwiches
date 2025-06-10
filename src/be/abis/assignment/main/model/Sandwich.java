@@ -1,4 +1,49 @@
 package be.abis.assignment.main.model;
 
+import be.abis.assignment.main.enumeration.TypeOfBread;
+
 public class Sandwich {
+    public TypeOfBread typeOfBread;
+    public boolean vegetables;
+    public String sandwichName;
+    public String sandwichPrice;
+
+    public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName, String sandwichPrice) {
+        this.typeOfBread = typeOfBread;
+        this.vegetables = vegetables;
+        this.sandwichName = sandwichName;
+        this.sandwichPrice = sandwichPrice;
+    }
+
+    public TypeOfBread getTypeOfBread() {
+        return typeOfBread;
+    }
+
+    public void setTypeOfBread(TypeOfBread typeOfBread) {
+        this.typeOfBread = typeOfBread;
+    }
+
+    public boolean isVegetables() {
+        return vegetables;
+    }
+
+    public void setVegetables(boolean vegetables) {
+        this.vegetables = vegetables;
+    }
+
+    public String getSandwichName() {
+        return sandwichName;
+    }
+
+    public void setSandwichName(String sandwichName) {
+        this.sandwichName = sandwichName;
+    }
+
+    public String getSandwichPrice() {
+        return sandwichPrice;
+    }
+
+    public void setSandwichPrice(String sandwichPrice) {
+        this.sandwichPrice = sandwichPrice;
+    }
 }
