@@ -1,8 +1,12 @@
 package be.abis.assignment.main.model;
 
 public class OfficeManager extends Person{
+    public OfficeManager(String firstName, String lastName) {
+        super(firstName, lastName);
+    }
+
     @Override
-    public void orderSandwich(){};
+    public void orderSandwich(String sandwichName, Enum TypeOfBread, boolean needVegetable){}
 
     public void addSandwich(){}
     public void deleteSandwich(){}
