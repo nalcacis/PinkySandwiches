@@ -6,7 +6,7 @@ public class Sandwich {
     public TypeOfBread typeOfBread;
     public boolean vegetables;
     public String sandwichName;
-    public String sandwichPrice;
+    public double sandwichPrice;
 
     public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName, double sandwichPrice) {
         this.typeOfBread = typeOfBread;
@@ -39,11 +39,11 @@ public class Sandwich {
         this.sandwichName = sandwichName;
     }
 
-    public String getSandwichPrice() {
+    public double getSandwichPrice() {
         return sandwichPrice;
     }
 
-    public void setSandwichPrice(String sandwichPrice) {
+    public void setSandwichPrice(double sandwichPrice) {
         this.sandwichPrice = sandwichPrice;
     }
 
