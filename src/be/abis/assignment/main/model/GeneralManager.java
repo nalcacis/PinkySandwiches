@@ -8,14 +8,6 @@ public class GeneralManager extends Person {
         super(firstName, lastName);
     }
 
-    @Override
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, String price ){
-        Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, price);
-        Order o1 = new Order(s1,this);
-        System.out.println(" " + s1);
-        System.out.println(" " + o1);
-    }
-
     public String statistics() {
         return null;
     }

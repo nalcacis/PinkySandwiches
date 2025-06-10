@@ -13,4 +13,11 @@ public class Session {
     public void setSessionName(String sessionName) {
         this.sessionName = sessionName;
     }
+
+    @Override
+    public String toString() {
+        return "Session{" +
+                "sessionName='" + sessionName + '\'' +
+                '}';
+    }
 }

@@ -8,11 +8,11 @@ public class Sandwich {
     public String sandwichName;
     public String sandwichPrice;
 
-    public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName, String sandwichPrice) {
+    public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName, double sandwichPrice) {
         this.typeOfBread = typeOfBread;
         this.vegetables = vegetables;
         this.sandwichName = sandwichName;
-        this.sandwichPrice = sandwichPrice;
+        this.sandwichPrice = String.valueOf(sandwichPrice);
     }
 
     public TypeOfBread getTypeOfBread() {

@@ -1,25 +1,22 @@
 package be.abis.assignment.main.model;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
+import java.util.List;
 
 public class OfficeManager extends Person{
     public OfficeManager(String firstName, String lastName) {
         super(firstName, lastName);
     }
 
-    @Override
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, String price ){
-        Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, price);
-        Order o1 = new Order(s1,this);
-        System.out.println(" " + s1);
-        System.out.println(" " + o1);
-    }
 
-    public void addSandwich(String sandwichName, TypeOfBread typeOfBread, String price){
-
-    }
-    public void deleteSandwich(){}
-    public void addSession(){}
+    //Sessions are hardcoded
+    /*private List<Session> sessions;
+    public void addSession(String sessionName){
+        Session session = new Session(sessionName);
+        sessions.add(session);
+        }
     public void deleteSession(){}
+     */
+
     public void printOutput(){}
 }
