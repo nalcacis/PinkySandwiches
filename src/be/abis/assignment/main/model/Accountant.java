@@ -7,9 +7,11 @@ public class Accountant extends Person {
         super(firstName, lastName);
     }
 
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable ){
-        Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, "1000");
+    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, String price ){
+        Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, price);
         Order o1 = new Order(s1,this);
+        System.out.println("sandwich: " + s1.getSandwichName() + " " );
+        System.out.println("order: " + o1.getSandwich().getSandwichName() + " " + o1.getPerson().getFirstName());
     }
 
     public double calculatePrice(){

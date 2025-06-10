@@ -1,5 +1,7 @@
 package be.abis.assignment.main.model;
 
+import be.abis.assignment.main.enumeration.TypeOfBread;
+
 public abstract class Person {
     private String firstName;
     private String lastName;
@@ -22,7 +24,7 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public void orderSandwich(String sandwichName, Enum TypeOfBread, boolean needVegetable){
+    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean needVegetable, String price){
 
     }
 }
