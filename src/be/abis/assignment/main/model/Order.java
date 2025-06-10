@@ -21,4 +21,9 @@ public class Order {
     public void setSandwich(Sandwich sandwich) {
         this.sandwich = sandwich;
     }
+
+    @Override
+    public String toString() {
+        return "Order Details: "  + person + " ordered " + sandwich;
+    }
 }

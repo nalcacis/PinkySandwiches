@@ -12,8 +12,8 @@ public class GeneralManager extends Person {
     public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, String price ){
         Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, price);
         Order o1 = new Order(s1,this);
-        System.out.println("sandwich: " + s1.getSandwichName() + " " );
-        System.out.println("order: " + o1.getSandwich() + " " + o1.getPerson());
+        System.out.println(" " + s1);
+        System.out.println(" " + o1);
     }
 
     public String statistics() {

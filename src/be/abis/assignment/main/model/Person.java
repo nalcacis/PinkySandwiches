@@ -25,6 +25,12 @@ public abstract class Person {
     }
 
     public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean needVegetable, String price){
+    }
 
+    @Override
+    public String toString() {
+        return "Person, " +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'';
     }
 }

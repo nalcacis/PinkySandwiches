@@ -46,4 +46,13 @@ public class Sandwich {
     public void setSandwichPrice(String sandwichPrice) {
         this.sandwichPrice = sandwichPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Sandwich Details: " +
+                "typeOfBread=" + typeOfBread +
+                ", vegetables=" + vegetables +
+                ", sandwichName='" + sandwichName + '\'' +
+                ", sandwichPrice='" + sandwichPrice + '\'';
+    }
 }
