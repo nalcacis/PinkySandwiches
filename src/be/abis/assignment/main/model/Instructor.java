@@ -1,4 +1,8 @@
 package be.abis.assignment.main.model;
 
-public class Instructor {
+public class Instructor extends Person {
+    @Override
+    public void orderSandwich(){
+
+    };
 }
