@@ -27,7 +27,7 @@ public class TestMain {
 
         try {
             SandwichRepository sr = new MemoryArraySandwichRepository();
-            Accountant a1 = new Accountant("hello", "kitty");
+            Accountant a11 = new Accountant("hello", "kitty");
             //a1.orderSandwich("chicken", GRIS, true, 11);
             Sandwich s2 = new Sandwich(BLANC, false, "salmon", 13);
             sr.addSandwichToMenu(s2);
