@@ -14,7 +14,7 @@ public class Sandwich {
         this.typeOfBread = typeOfBread;
         this.vegetables = vegetables;
         this.sandwichName = sandwichName;
-        this.sandwichPrice = String.valueOf(sandwichPrice);
+        this.sandwichPrice = sandwichPrice;
     }
 
     public TypeOfBread getTypeOfBread() {
