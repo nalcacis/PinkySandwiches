@@ -1,9 +1,18 @@
 package be.abis.assignment.main.repository;
 
+import be.abis.assignment.main.model.Sandwich;
+
 public interface SandwichRepository {
-    public void addSandwichToMenu();
-    public void deleteSandwichToMenu();
+    public void addSandwichToMenu(Sandwich sandwich);
+    public void deleteSandwichToMenu(Sandwich sandwich);
     public void printOutputToMenu();
 
-
+    public static String formatSandwich(Sandwich s){
+        StringBuilder sb = new StringBuilder("");
+        sb.append(s.getSandwichName()).append(";")
+                .append(s.vegetables).append(";")
+                .append(s.getTypeOfBread()).append(";")
+                .append(s.getSandwichPrice());
+        return sb.toString();
+    }
 }

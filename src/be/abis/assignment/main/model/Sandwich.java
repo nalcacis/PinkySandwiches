@@ -2,6 +2,8 @@ package be.abis.assignment.main.model;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
 
+import java.util.Objects;
+
 public class Sandwich {
     public TypeOfBread typeOfBread;
     public boolean vegetables;
@@ -54,5 +56,18 @@ public class Sandwich {
                 ", vegetables=" + vegetables +
                 ", sandwichName='" + sandwichName + '\'' +
                 ", sandwichPrice='" + sandwichPrice + '\'';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        //if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sandwich sandwich = (Sandwich) o;
+        return Double.compare(sandwichPrice, sandwich.sandwichPrice) == 0 && Objects.equals(sandwichName, sandwich.sandwichName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(typeOfBread, vegetables, sandwichName, sandwichPrice);
     }
 }
