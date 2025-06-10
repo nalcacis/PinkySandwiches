@@ -24,7 +24,7 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean needVegetable, String price){
+    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean needVegetable, double price){
     }
 
     @Override

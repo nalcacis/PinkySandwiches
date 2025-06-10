@@ -9,7 +9,7 @@ public class GeneralManager extends Person {
     }
 
     @Override
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, String price ){
+    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double price ){
         Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, price);
         Order o1 = new Order(s1,this);
         System.out.println(" " + s1);
