@@ -54,17 +54,14 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         }
     }
 
-    public void deleteSandwichToMenu(Sandwich sandwich) {
-        String fileLocationNew = "/temp/javacourses/PinkySandwichMenuNew.csv";
-        try (BufferedWriter bwNew = Files.newBufferedWriter(Paths.get(fileLocationNew), StandardCharsets.UTF_8)) {
+    public void deleteSandwichFromMenu(Sandwich sandwich) {
+        try (BufferedWriter bwNew = Files.newBufferedWriter(Paths.get(fileLocation), StandardCharsets.UTF_8)) {
             Iterator<Sandwich> iter = sanwiches.iterator();
             while (iter.hasNext()) {
                 Sandwich s = iter.next();
                 if (s.equals(sandwich)) {
                     iter.remove();
                 } else {
-                    System.out.println("here");
-                    System.out.println(s.getSandwichName());
                     bwNew.write(SandwichRepository.formatSandwich(s));
                     bwNew.newLine();
                 }
@@ -74,7 +71,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         }
     }
 
-    public void printOutputToMenu() {
+    public void printTodaysOrder() {
 
     }
 

@@ -1,9 +1,6 @@
 package be.abis.assignment.main;
 
-import be.abis.assignment.main.model.Accountant;
-import be.abis.assignment.main.model.Sandwich;
-import be.abis.assignment.main.model.Instructor;
-import be.abis.assignment.main.model.Session;
+import be.abis.assignment.main.model.*;
 import be.abis.assignment.main.repository.MemoryArraySandwichRepository;
 import be.abis.assignment.main.repository.SandwichRepository;
 
@@ -34,11 +31,15 @@ public class TestMain {
             Sandwich s1 = new Sandwich(BLANC, false, "salmon", 12);
             sr.addSandwichToMenu(s1);
             ((MemoryArraySandwichRepository) sr).printMenu();
-            sr.deleteSandwichToMenu(s1);
+            sr.deleteSandwichFromMenu(s1);
             ((MemoryArraySandwichRepository) sr).printMenu();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
+        //OfficeManager om = new OfficeManager("Tom", "Jerry");
+        //om.printOutput();
 
     }
 }

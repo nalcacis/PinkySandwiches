@@ -4,8 +4,8 @@ import be.abis.assignment.main.model.Sandwich;
 
 public interface SandwichRepository {
     public void addSandwichToMenu(Sandwich sandwich);
-    public void deleteSandwichToMenu(Sandwich sandwich);
-    public void printOutputToMenu();
+    public void deleteSandwichFromMenu(Sandwich sandwich);
+    public void printTodaysOrder();
 
     public static String formatSandwich(Sandwich s){
         StringBuilder sb = new StringBuilder("");
