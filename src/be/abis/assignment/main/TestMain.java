@@ -5,6 +5,7 @@ import be.abis.assignment.main.repository.MemoryArraySandwichRepository;
 import be.abis.assignment.main.repository.SandwichRepository;
 
 import java.io.IOException;
+import java.util.List;
 
 import static be.abis.assignment.main.enumeration.TypeOfBread.BLANC;
 import static be.abis.assignment.main.enumeration.TypeOfBread.GRIS;
@@ -27,19 +28,20 @@ public class TestMain {
             Accountant a11 = new Accountant("hello", "kitty");
             //a1.orderSandwich("chicken", GRIS, true, 11);
             Sandwich s2 = new Sandwich(BLANC, false, "salmon", 13);
-            sr.addSandwichToMenu(s2);
+
+            /*sr.addSandwichToMenu(s2);
             Sandwich s1 = new Sandwich(BLANC, false, "salmon", 12);
             sr.addSandwichToMenu(s1);
-            ((MemoryArraySandwichRepository) sr).printMenu();
+            //((MemoryArraySandwichRepository) sr).printMenu();
             sr.deleteSandwichFromMenu(s1);
+
+             */
             ((MemoryArraySandwichRepository) sr).printMenu();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-
         //OfficeManager om = new OfficeManager("Tom", "Jerry");
         //om.printOutput();
-
     }
 }
