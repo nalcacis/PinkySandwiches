@@ -1,6 +1,7 @@
 package be.abis.assignment.main.repository;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
+import be.abis.assignment.main.enumeration.TypeOfSandwich;
 import be.abis.assignment.main.model.*;
 
 import java.io.*;
@@ -65,7 +66,7 @@ public class MemoryArrayOrderRepository implements OrderRepository {
         String date = vals[0];
         String firstname = vals[1];
         String sandwichName = vals[2];
-        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstname, "test", new Session("JAVA")));
+        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE,TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstname, "test", new Session("JAVA")));
         return order1;
     }
 }
