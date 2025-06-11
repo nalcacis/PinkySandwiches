@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 
 public class MemoryArraySandwichRepository implements SandwichRepository {
-    private String fileLocation = "/temp/javacourses/PinkySandwichMenu.csv";
+    private final String fileLocation = "https://github.com/nalcacis/PinkySandwiches/blob/master/PinkySandwichMenu.csv";
     private List<Sandwich> sandwiches = new ArrayList<>();
 
     public MemoryArraySandwichRepository() throws IOException {
@@ -45,7 +45,6 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         String title = vals[1];
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
         //Double price = Double.parseDouble(vals[3]);
-        //System.out.println(title + "          " + vegetables + "           " + " " + "             " + price);
 
         Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichType), TypeOfBread.WIT, false, title, 10);
         return s1;

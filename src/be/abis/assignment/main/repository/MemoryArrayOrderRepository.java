@@ -19,19 +19,19 @@ import java.util.stream.Collectors;
 public class MemoryArrayOrderRepository implements OrderRepository {
     public List<Order> orders = new ArrayList<>();
     String fileLocation = "";
-    String fileLocationWrite = "/temp/javacourses/PinkySandwichOrderHistory.csv";
-    String fileLocationOrder = "/temp/javacourses/PinkySandwichOrderHistory.csv";
+    String fileLocationWrite = "https://github.com/nalcacis/PinkySandwiches/blob/master/PinkySandwichOrderHistory.csv";
+    //String fileLocationOrder = "/temp/javacourses/PinkySandwichOrderHistory.csv";
 
     public MemoryArrayOrderRepository() {
         //read the ordarOfThe file and fill it in orders list
-        try {
+        /*try {
             orders = Files.lines(Paths.get(fileLocationOrder))
                     .map(line -> this.parseOrder(line))
                     .filter(order -> order.getOrderDate().equals(LocalDate.now()))
                     .collect(Collectors.toList());
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 
     public void checkSandwichOrderedToday() {
@@ -39,7 +39,9 @@ public class MemoryArrayOrderRepository implements OrderRepository {
     }
 
     public void saveOrder(Order o) {
-        //orders.stream().filter(order -> orders.equals(o))
+        System.out.println("test");
+        System.out.println(orders.stream().filter(order -> orders.equals(o))
+                        .count());
 
         orders.add(o);
         try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(fileLocationWrite), StandardCharsets.UTF_8, StandardOpenOption.APPEND)) {

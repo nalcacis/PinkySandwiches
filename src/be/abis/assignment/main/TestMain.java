@@ -11,14 +11,15 @@ import java.io.IOException;
 
 import static be.abis.assignment.main.enumeration.TypeOfBread.BLANC;
 import static be.abis.assignment.main.enumeration.TypeOfBread.GRIS;
+import static be.abis.assignment.main.enumeration.TypeOfSandwich.VIS;
 
 public class TestMain {
     public static void main(String[] args) {
         OrderRepository or = new MemoryArrayOrderRepository();
         Accountant a1 = new Accountant("hello", "kitty");
-        //Sandwich s1 = new Sandwich(GRIS, true, "Chicken", 10);
-        //Order o1 = new Order(s1,a1);
-        //or.saveOrder(o1);
+        Sandwich s1 = new Sandwich(VIS,GRIS, true, "Chicken", 10);
+        Order o1 = new Order(s1,a1);
+        or.saveOrder(o1);
 
         //Person p1 = new Student("hello1", "kitty1", new Session("JAVA"));
         //Sandwich s2 = new Sandwich(BLANC, false, "salmon", 11);
