@@ -12,9 +12,9 @@ public class UpdateMenu {
     public static void main(String[] args) {
         try {
             SandwichRepository sr = new MemoryArraySandwichRepository();
-            Sandwich s2 = new Sandwich(BLANC, false, "salmon", 13);
+            //Sandwich s2 = new Sandwich(BLANC, false, "salmon", 13);
             //sr.addSandwichToMenu(s2);
-            Sandwich s1 = new Sandwich(BLANC, false, "salmon", 12);
+            //Sandwich s1 = new Sandwich(BLANC, false, "salmon", 12);
             //sr.addSandwichToMenu(s1);
             //((MemoryArraySandwichRepository) sr).printMenu();
             //sr.deleteSandwichFromMenu(s1);
