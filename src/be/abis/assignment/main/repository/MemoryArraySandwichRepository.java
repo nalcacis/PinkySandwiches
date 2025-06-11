@@ -13,10 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class MemoryArraySandwichRepository implements SandwichRepository {
     private String fileLocation = "/temp/javacourses/PinkySandwichMenu.csv";
@@ -108,15 +105,4 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
 
     }
 
-    public String[] parseSandwichNew(String s) {
-        String[] vals = s.split(";");
-        String title = vals[0];
-        String vegetables = vals[1];
-        //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
-        Double price = Double.parseDouble(vals[3]);
-        //System.out.println(title + "          " + vegetables + "           " + " " + "             " + price);
-        //Sandwich s1 = new Sandwich(TypeOfBread.GRIS, ("yes".equals(vegetables) ? true : false), title, price);
-        //return s1;
-        return vals;
-    }
 }

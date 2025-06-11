@@ -17,8 +17,6 @@ public interface OrderRepository {
         sb.append(today.format(dtf)).append(";")
                 .append(o.getPerson().getFirstName()).append(";")
                 .append(o.getSandwich().getSandwichName()).append(";");
-        System.out.println("string: ");
-        System.out.println(sb.toString());
         return sb.toString();
     }
 }

@@ -39,9 +39,6 @@ public abstract class Person {
     public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ) {
         Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, sandwichPrice);
         Order o1 = new Order(s1,this);
-        //System.out.println(" " + s1);
-        //System.out.println(" " + o1);
-        //System.out.println(this.getClass().getSimpleName());
     }
 
     public Session getSession() {
