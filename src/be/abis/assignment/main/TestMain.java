@@ -17,9 +17,13 @@ public class TestMain {
     public static void main(String[] args) {
         OrderRepository or = new MemoryArrayOrderRepository();
         Accountant a1 = new Accountant("hello", "kitty");
-        Sandwich s1 = new Sandwich(VIS,GRIS, true, "Chicken", 10);
-        Order o1 = new Order(s1,a1);
-        or.saveOrder(o1);
+        Sandwich s1 = new Sandwich(VIS, GRIS, true, "Chicken", 10);
+        Order o1 = new Order(s1, a1);
+        try {
+            or.saveOrder(o1);
+        } catch (MaxSandwitchPerDayException e) {
+            throw new RuntimeException(e);
+        }
 
         //Person p1 = new Student("hello1", "kitty1", new Session("JAVA"));
         //Sandwich s2 = new Sandwich(BLANC, false, "salmon", 11);
@@ -33,7 +37,7 @@ public class TestMain {
         //System.out.println(a1.getClass().getSimpleName());
         //System.out.println(instructor.getClass().getSimpleName());
 
-        or.printOrders();
+        //or.printOrders();
 
     }
 }

@@ -1,12 +1,13 @@
 package be.abis.assignment.main.repository;
 
+import be.abis.assignment.main.exceptions.MaxSandwitchPerDayException;
 import be.abis.assignment.main.model.Order;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public interface OrderRepository {
-    public void saveOrder(Order o);
+    public void saveOrder(Order o) throws MaxSandwitchPerDayException;
 
     public void printOrders();
 

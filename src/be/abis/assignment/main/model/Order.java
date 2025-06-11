@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Order {
     LocalDate orderDate ;
@@ -47,5 +48,18 @@ public class Order {
     @Override
     public String toString() {
         return "Order Details: " + person + " ordered " + sandwich;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        //if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return Objects.equals(orderDate, order.orderDate) && Objects.equals(person.getFirstName(), order.person.getFirstName())  ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderDate, person, sandwich);
     }
 }

@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 
 public class MemoryArraySandwichRepository implements SandwichRepository {
-    private final String fileLocation = "https://github.com/nalcacis/PinkySandwiches/blob/master/PinkySandwichMenu.csv";
+    private final String fileLocation = "PinkySandwichMenu.csv";
     private List<Sandwich> sandwiches = new ArrayList<>();
 
     public MemoryArraySandwichRepository() throws IOException {
