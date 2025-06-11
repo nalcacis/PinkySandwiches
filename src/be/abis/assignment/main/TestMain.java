@@ -8,6 +8,7 @@ import be.abis.assignment.main.repository.SandwichRepository;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.io.PrintWriter;
 
 import static be.abis.assignment.main.enumeration.TypeOfBread.BLANC;
@@ -33,11 +34,27 @@ public class TestMain {
         //a1.orderSandwich("chicken", GRIS, true, 1000.0);
         //System.out.println(a1.getClass().getSimpleName());
 
-        //Session session = new Session("JAVA");
-        //Instructor instructor = new Instructor("Sandy", "Scchillebeeckx", session);
-        //instructor.orderSandwich("club", WIT, false, 200);
+        Session session = new Session("JAVA");
+        Instructor instructor = new Instructor("Sandy", "Scchillebeeckx", session);
 
+        instructor.orderSandwich("club" , WIT, false , 200);
         //System.out.println(instructor.getClass().getSimpleName());
+
+        try {
+            SandwichRepository sr = new MemoryArraySandwichRepository();
+            Accountant a11 = new Accountant("hello", "kitty");
+            //a1.orderSandwich("chicken", GRIS, true, 11);
+            Sandwich s2 = new Sandwich(BLANC, false, "salmon", 13);
+            sr.addSandwichToMenu(s2);
+            Sandwich s1 = new Sandwich(BLANC, false, "salmon", 12);
+            sr.addSandwichToMenu(s1);
+            ((MemoryArraySandwichRepository) sr).printMenu();
+            sr.deleteSandwichFromMenu(s1);
+            ((MemoryArraySandwichRepository) sr).printMenu();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
         //OfficeManager om = new OfficeManager("Tom", "Jerry");
         //om.printOutput();
