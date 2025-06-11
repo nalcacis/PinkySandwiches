@@ -1,6 +1,7 @@
 package be.abis.assignment.main.repository;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
+import be.abis.assignment.main.enumeration.TypeOfSandwich;
 import be.abis.assignment.main.model.Person;
 import be.abis.assignment.main.model.Sandwich;
 
@@ -32,7 +33,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
             Sandwich s = this.parseSandwich(line);
-           this.sandwiches.add(s);
+            this.sandwiches.add(s);
         }
         bufferedReader.close();
     }
@@ -58,19 +59,22 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         StringBuilder sb = new StringBuilder("");
         sb.append(String.format("Sandwiche Naam", "Groenten Ja/Nee", "Bruin/Wit"));
         System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.printf("%s\n","Broodjes (Pinky)");
+        System.out.printf("%s\n", "Broodjes (Pinky)");
         System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.printf("%s\n","Naam: ");
-        System.out.printf("%s\n","Training: ");
-        System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.printf("%-30s%-25s%-25s%-25s\n", "Vlees", "Groenten Ja/Nee", "Bruin/Wit", "Price");
-        System.out.println("-------------------------------------------------------------------------------------------");
-               for (Sandwich s : sandwiches) {
-                   NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("nl", "BE"));
-                   nf.setGroupingUsed(false);
-                   System.out.printf("%-30s%-25s%-25s%-25s\n", s.sandwichName, "", "", nf.format(s.sandwichPrice).replaceAll("\\u00A0", ""));
-               }
-           }
+        System.out.printf("%s\n", "Naam: ");
+        System.out.printf("%s\n", "Training: ");
+        for (Sandwich s : sandwiches) {
+            if (s.getSandwichName().equals(TypeOfSandwich.values())) {
+                System.out.println("-------------------------------------------------------------------------------------------");
+                System.out.printf("%-30s%-25s%-25s%-25s\n", s.getSandwichName(), "Groenten Ja/Nee", "Bruin/Wit", "Price");
+                System.out.println("-------------------------------------------------------------------------------------------");
+            } else {
+                NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("nl", "BE"));
+                nf.setGroupingUsed(false);
+                System.out.printf("%-30s%-25s%-25s%-25s\n", s.sandwichName, "", "", nf.format(s.sandwichPrice).replaceAll("\\u00A0", ""));
+            }
+        }
+    }
 
     public void addSandwichToMenu(Sandwich sandwich) {
         try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(fileLocation), StandardCharsets.UTF_8, StandardOpenOption.APPEND)) {
