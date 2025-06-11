@@ -2,6 +2,10 @@ package be.abis.assignment.main.model;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Person {
     private String firstName;
     private String lastName;
@@ -32,12 +36,12 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ){
+    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ) {
         Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, sandwichPrice);
         Order o1 = new Order(s1,this);
-        System.out.println(" " + s1);
-        System.out.println(" " + o1);
-        System.out.println(this.getClass().getSimpleName());
+        //System.out.println(" " + s1);
+        //System.out.println(" " + o1);
+        //System.out.println(this.getClass().getSimpleName());
     }
 
     public Session getSession() {

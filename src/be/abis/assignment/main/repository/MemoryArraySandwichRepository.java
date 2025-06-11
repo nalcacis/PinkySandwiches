@@ -4,10 +4,8 @@ import be.abis.assignment.main.enumeration.TypeOfBread;
 import be.abis.assignment.main.model.Person;
 import be.abis.assignment.main.model.Sandwich;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -32,14 +30,17 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(fileLocation));
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
-            Sandwich s = this.parseSandwich(line);
-            this.sanwiches.add(s);
+            //Sandwich s = this.parseSandwich(line);
+            //this.sanwiches.add(s);
+            String[] sandwiches = this.parseSandwich(line);
+            System.out.println(sandwiches[0]);
+            System.out.println(sandwiches[1]);
         }
         bufferedReader.close();
     }
 
-    public void printMenu(){
-        for (Sandwich s : sanwiches){
+    public void printMenu() {
+        for (Sandwich s : sanwiches) {
             System.out.println(s.sandwichName + " " + s.sandwichPrice);
         }
     }
@@ -73,16 +74,18 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
 
     public void printTodaysOrder() {
 
+
     }
 
-    public Sandwich parseSandwich(String s) {
+    public String[] parseSandwich(String s) {
         String[] vals = s.split(";");
         String title = vals[0];
         String vegetables = vals[1];
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
         Double price = Double.parseDouble(vals[3]);
         //System.out.println(title + "          " + vegetables + "           " + " " + "             " + price);
-        Sandwich s1 = new Sandwich(TypeOfBread.GRIS, ("yes".equals(vegetables) ? true : false), title, price);
-        return s1;
+        //Sandwich s1 = new Sandwich(TypeOfBread.GRIS, ("yes".equals(vegetables) ? true : false), title, price);
+        //return s1;
+        return vals;
     }
 }

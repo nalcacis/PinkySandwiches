@@ -1,5 +1,11 @@
 package be.abis.assignment.main.model;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     Person person;
     Sandwich sandwich;
@@ -24,6 +30,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order Details: "  + person + " ordered " + sandwich;
+        return "Order Details: " + person + " ordered " + sandwich;
     }
 }
