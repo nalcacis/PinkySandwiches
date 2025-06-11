@@ -1,20 +1,31 @@
 package be.abis.assignment.main.model;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
+import be.abis.assignment.main.enumeration.TypeOfSandwich;
 
 import java.util.Objects;
 
 public class Sandwich {
+    public TypeOfSandwich typeOfSandwich;
     public TypeOfBread typeOfBread;
     public boolean vegetables;
     public String sandwichName;
     public double sandwichPrice;
 
-    public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName, double sandwichPrice) {
+    public Sandwich(TypeOfSandwich typeOfSandwich, TypeOfBread typeOfBread, boolean vegetables, String sandwichName, double sandwichPrice) {
+        this.typeOfSandwich = typeOfSandwich;
         this.typeOfBread = typeOfBread;
         this.vegetables = vegetables;
         this.sandwichName = sandwichName;
         this.sandwichPrice = sandwichPrice;
+    }
+
+    public TypeOfSandwich getTypeOfSandwich() {
+        return typeOfSandwich;
+    }
+
+    public void setTypeOfSandwich(TypeOfSandwich typeOfSandwich) {
+        this.typeOfSandwich = typeOfSandwich;
     }
 
     public TypeOfBread getTypeOfBread() {
@@ -51,12 +62,15 @@ public class Sandwich {
 
     @Override
     public String toString() {
-        return "Sandwich Details: " +
-                "typeOfBread=" + typeOfBread +
+        return "Sandwich{" +
+                "typeOfSandwich=" + typeOfSandwich +
+                ", typeOfBread=" + typeOfBread +
                 ", vegetables=" + vegetables +
                 ", sandwichName='" + sandwichName + '\'' +
-                ", sandwichPrice='" + sandwichPrice + '\'';
+                ", sandwichPrice=" + sandwichPrice +
+                '}';
     }
+
 
     @Override
     public boolean equals(Object o) {

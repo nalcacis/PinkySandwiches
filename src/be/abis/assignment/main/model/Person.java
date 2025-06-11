@@ -1,6 +1,7 @@
 package be.abis.assignment.main.model;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
+import be.abis.assignment.main.enumeration.TypeOfSandwich;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,8 +37,8 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public void orderSandwich(String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ) {
-        Sandwich s1 = new Sandwich(typeOfBread,  vegetable, sandwichName, sandwichPrice);
+    public void orderSandwich(TypeOfSandwich typeOfSandwich, String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ) {
+        Sandwich s1 = new Sandwich(typeOfSandwich, typeOfBread, vegetable, sandwichName, sandwichPrice);
         Order o1 = new Order(s1,this);
     }
 

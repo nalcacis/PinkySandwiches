@@ -42,34 +42,26 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         System.out.println(vals[1]);
         System.out.println(vals[2]);
         System.out.println(vals[3]);
-        String title = vals[0];
-        String vegetables = vals[1];
+        String sandwichType = vals[0].toUpperCase();
+        String title = vals[1];
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
-        Double price = Double.parseDouble(vals[3]);
+        //Double price = Double.parseDouble(vals[3]);
         //System.out.println(title + "          " + vegetables + "           " + " " + "             " + price);
 
-        Sandwich s1 = new Sandwich(TypeOfBread.GRIS, ("yes".equals(vegetables) ? true : false), title, price);
+        Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichType), TypeOfBread.WIT, false, title, 10);
         return s1;
     }
 
     public void printMenu() {
         StringBuilder sb = new StringBuilder("");
-        sb.append(String.format("Sandwiche Naam", "Groenten Ja/Nee", "Bruin/Wit"));
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.printf("%s\n", "Broodjes (Pinky)");
         System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.printf("%s\n", "Naam: ");
-        System.out.printf("%s\n", "Training: ");
+        System.out.printf("%-30s%-25s%-25s%-25s\n", "Sandwich Type", "Groenten Ja/Nee", "Bruin/Wit", "Price");
+        System.out.println("-------------------------------------------------------------------------------------------");
         for (Sandwich s : sandwiches) {
-            if (s.getSandwichName().equals(TypeOfSandwich.values())) {
+                System.out.printf("%-30s%-25s%-25s%-25s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", s.sandwichPrice);
                 System.out.println("-------------------------------------------------------------------------------------------");
-                System.out.printf("%-30s%-25s%-25s%-25s\n", s.getSandwichName(), "Groenten Ja/Nee", "Bruin/Wit", "Price");
-                System.out.println("-------------------------------------------------------------------------------------------");
-            } else {
-                NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("nl", "BE"));
-                nf.setGroupingUsed(false);
-                System.out.printf("%-30s%-25s%-25s%-25s\n", s.sandwichName, "", "", nf.format(s.sandwichPrice).replaceAll("\\u00A0", ""));
-            }
         }
     }
 
@@ -101,7 +93,6 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
     }
 
     public void printTodaysOrder() {
-
 
     }
 
