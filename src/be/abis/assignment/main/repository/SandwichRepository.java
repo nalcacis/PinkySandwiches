@@ -6,6 +6,7 @@ public interface SandwichRepository {
     public void addSandwichToMenu(Sandwich sandwich);
     public void deleteSandwichFromMenu(Sandwich sandwich);
     public void printTodaysOrder();
+    public void printMenu();
 
     public static String formatSandwich(Sandwich s){
         StringBuilder sb = new StringBuilder("");
