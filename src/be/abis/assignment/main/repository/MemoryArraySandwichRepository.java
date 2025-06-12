@@ -2,21 +2,20 @@ package be.abis.assignment.main.repository;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
 import be.abis.assignment.main.enumeration.TypeOfSandwich;
-import be.abis.assignment.main.model.Person;
 import be.abis.assignment.main.model.Sandwich;
 
-import java.io.*;
-import java.lang.reflect.Array;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.text.NumberFormat;
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 
 public class MemoryArraySandwichRepository implements SandwichRepository {
-    private String fileLocation = "/temp/javacourses/PinkySandwichMenu.csv";
+    private final String fileLocation = "PinkySandwichMenu.csv";
     private List<Sandwich> sandwiches = new ArrayList<>();
 
     public MemoryArraySandwichRepository() throws IOException {
@@ -46,7 +45,6 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         String title = vals[1];
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
         //Double price = Double.parseDouble(vals[3]);
-        //System.out.println(title + "          " + vegetables + "           " + " " + "             " + price);
 
         Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichType), TypeOfBread.WIT, false, title, 10);
         return s1;
@@ -59,6 +57,9 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.printf("%-30s%-25s%-25s%-25s\n", "Sandwich Type", "Groenten Ja/Nee", "Bruin/Wit", "Price");
         System.out.println("-------------------------------------------------------------------------------------------");
+
+        //sandwiches.stream().collect(Collectors.groupingBy());
+
         for (Sandwich s : sandwiches) {
                 System.out.printf("%-30s%-25s%-25s%-25s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", s.sandwichPrice);
                 System.out.println("-------------------------------------------------------------------------------------------");
