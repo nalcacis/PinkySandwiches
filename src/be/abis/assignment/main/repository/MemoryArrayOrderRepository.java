@@ -86,7 +86,7 @@ public void printOrders() {
             Map<String, Long> sandwichCount = Files.lines(Paths.get(fileLocationWrite))
                     .map(this::parseOrder)
                     .collect(Collectors.groupingBy(
-                            order -> String.valueOf(order.getSandwich()),
+                            order -> String.valueOf(order.getSandwich().getSandwichName()),
                             Collectors.counting()));
 
 
