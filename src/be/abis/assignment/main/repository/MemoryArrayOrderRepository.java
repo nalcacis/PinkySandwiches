@@ -6,6 +6,7 @@ import be.abis.assignment.main.exceptions.MaxSandwitchPerDayException;
 import be.abis.assignment.main.model.*;
 
 import java.io.*;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,6 +22,7 @@ public class MemoryArrayOrderRepository implements OrderRepository {
     public List<Order> orders = new ArrayList<>();
     String fileLocation = "";
     String fileLocationWrite = "PinkySandwichOrderHistory.csv";
+    String writeToday = "todaysOrder.txt";
     //String fileLocationOrder = "/temp/javacourses/PinkySandwichOrderHistory.csv";
 
     public MemoryArrayOrderRepository() {
@@ -35,44 +37,57 @@ public class MemoryArrayOrderRepository implements OrderRepository {
         }
     }
 
-    public void checkSandwichOrderedToday() {
+    public void checkSandwichOrderedToday() throws IOException {
+        List<Order> todaysOrders = Files.lines(Paths.get(fileLocationWrite))
+                .map(line -> this.parseOrder(line))
+                .filter(order -> order.getOrderDate().equals(LocalDate.now()))
+                .collect(Collectors.toList());
 
-    }
-
-    public void saveOrder(Order o) throws MaxSandwitchPerDayException{
-        long count = orders.stream()
-                .filter(order -> order.equals(o))
-                .count();
-        if (count < 2){
-            orders.add(o);
-            try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(fileLocationWrite), StandardCharsets.UTF_8, StandardOpenOption.APPEND)) {
-                bw.newLine();
-                bw.write(OrderRepository.formatOrder(o));
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
+        try (BufferedWriter bw2 = Files.newBufferedWriter(Paths.get(writeToday), StandardCharsets.UTF_8)) {
+            for (Order o : todaysOrders) {
+                bw2.newLine();
+                bw2.write(OrderRepository.formatTodaysOrder(o));
             }
-        }else {
-            throw new MaxSandwitchPerDayException("Max sandwich per day");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
-    public List<Order> findAllOrders() {
-        return orders;
-    }
 
-    public void printOrders() {
-        for (Order o : orders) {
-            System.out.println(o.getPerson().getFirstName() + " ordered " + o.getSandwich().getSandwichName());
+public void saveOrder(Order o) throws MaxSandwitchPerDayException {
+    long count = orders.stream()
+            .filter(order -> order.equals(o))
+            .count();
+    if (count < 2) {
+        orders.add(o);
+        try (BufferedWriter bw = Files.newBufferedWriter(Paths.get(fileLocationWrite), StandardCharsets.UTF_8, StandardOpenOption.APPEND)) {
+            bw.newLine();
+            bw.write(OrderRepository.formatOrder(o));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
+    } else {
+        throw new MaxSandwitchPerDayException("Max sandwich per day");
     }
+}
 
-    public Order parseOrder(String s) {
-        String[] vals = s.split(";");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/M/yyyy");
-        String date = vals[0];
-        String firstname = vals[1];
-        String sandwichName = vals[2];
-        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstname, "test", new Session("JAVA")));
-        return order1;
+public List<Order> findAllOrders() {
+    return orders;
+}
+
+public void printOrders() {
+    for (Order o : orders) {
+        System.out.println(o.getPerson().getFirstName() + " ordered " + o.getSandwich().getSandwichName());
     }
+}
+
+public Order parseOrder(String s) {
+    String[] vals = s.split(";");
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/M/yyyy");
+    String date = vals[0];
+    String firstname = vals[1];
+    String sandwichName = vals[2];
+    Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstname, "test", new Session("JAVA")));
+    return order1;
+}
 }

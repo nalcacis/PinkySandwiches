@@ -20,4 +20,12 @@ public interface OrderRepository {
                 .append(o.getSandwich().getSandwichName()).append(";");
         return sb.toString();
     }
+
+    static String formatTodaysOrder(Order o) {
+        StringBuilder sb = new StringBuilder("");
+        sb.append(o.getPerson().getFirstName()).append(" ordered ")
+                .append(o.getSandwich().getSandwichName()).append(" sandwich ")
+        .append((o.getSandwich().vegetables?"with salad ":"without salad ")).append(o.getSandwich().typeOfBread.toString().toLowerCase()).append(" brood.");
+        return sb.toString();
+    }
 }
