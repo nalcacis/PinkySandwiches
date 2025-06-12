@@ -40,7 +40,6 @@ public class MemoryArrayOrderRepository implements OrderRepository {
     }
 
     public void saveOrder(Order o) throws MaxSandwitchPerDayException{
-        System.out.println("test " + o.getPerson().getFirstName() + " " + o.getPerson().getLastName() + " " + o.getOrderDate());
         long count = orders.stream()
                 .filter(order -> order.equals(o))
                 .count();
