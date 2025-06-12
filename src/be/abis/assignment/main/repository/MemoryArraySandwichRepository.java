@@ -2,6 +2,7 @@ package be.abis.assignment.main.repository;
 
 import be.abis.assignment.main.enumeration.TypeOfBread;
 import be.abis.assignment.main.enumeration.TypeOfSandwich;
+import be.abis.assignment.main.exceptions.SandwichNotFoundException;
 import be.abis.assignment.main.model.Sandwich;
 
 import java.io.*;
@@ -36,12 +37,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
     }
 
     public Sandwich parseSandwich(String s) {
-        System.out.println(s);
         String[] vals = s.split(";");
-        System.out.println(vals[0]);
-        System.out.println(vals[1]);
-        System.out.println(vals[2]);
-        System.out.println(vals[3]);
         String sandwichType = vals[0].toUpperCase();
         String title = vals[1];
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
@@ -77,6 +73,10 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
     }
 
     public void deleteSandwichFromMenu(Sandwich sandwich) {
+        /*sandwiches.stream().filter(sandwich1 -> sandwich1.equals(sandwich))
+                .findFirst()
+                .orElseThrow(()->new SandwichNotFoundException("Sandwich not found"));*/
+
         try (BufferedWriter bwNew = Files.newBufferedWriter(Paths.get(fileLocation), StandardCharsets.UTF_8)) {
             Iterator<Sandwich> iter = sandwiches.iterator();
             while (iter.hasNext()) {

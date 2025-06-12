@@ -12,12 +12,24 @@ public class Sandwich {
     public String sandwichName;
     public double sandwichPrice;
 
+    public Sandwich(TypeOfSandwich typeOfSandwich, String sandwichName, double sandwichPrice) {
+        this.typeOfSandwich = typeOfSandwich;
+        this.sandwichName = sandwichName;
+        this.sandwichPrice = sandwichPrice;
+    }
+
+    public Sandwich(TypeOfSandwich typeOfSandwich, String sandwichName) {
+        this.typeOfSandwich = typeOfSandwich;
+        this.sandwichName = sandwichName;
+    }
+
     public Sandwich(TypeOfSandwich typeOfSandwich, TypeOfBread typeOfBread, boolean vegetables, String sandwichName) {
         this.typeOfSandwich = typeOfSandwich;
         this.typeOfBread = typeOfBread;
         this.vegetables = vegetables;
         this.sandwichName = sandwichName;
     }
+
 
     public TypeOfSandwich getTypeOfSandwich() {
         return typeOfSandwich;

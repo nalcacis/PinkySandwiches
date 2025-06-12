@@ -87,7 +87,7 @@ public void printOrders() {
         String firstName = vals[1];
         String lastName = vals[2];
         String sandwichName = vals[3];
-        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName), new Student(firstName, lastName, new Session("JAVA")));
+        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName), new Person(firstName, lastName));
         return order1;
     }
 }
