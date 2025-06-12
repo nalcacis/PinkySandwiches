@@ -1,0 +1,149 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Accountant {
+  + calculatePrice(): double
+}
+class GeneralManager {
+  + statistics(): String
+}
+class Instructor {
+  ~ session: Session
+}
+class MaxSandwitchPerDayException
+class MemoryArrayOrderRepository {
+  + orders: List<Order>
+  ~ writeToday: String
+  ~ fileLocation: String
+  ~ fileLocationWrite: String
+  + printOrders(): void
+  + findAllOrders(): List<Order>
+  + saveOrder(Order): void
+  + parseOrder(String): Order
+  + checkSandwichOrderedToday(): void
+  + statistics(): void
+}
+class MemoryArraySandwichRepository {
+  - sandwiches: List<Sandwich>
+  - fileLocation: String
+  + addSandwichToMenu(Sandwich): void
+  + printMenu(): void
+  + parseSandwich(String): Sandwich
+  + deleteSandwichFromMenu(Sandwich): void
+  + readFile(): void
+  + printTodaysOrder(): void
+}
+class OfficeManager {
+  + printOutput(): void
+}
+class Order {
+  ~ sandwich: Sandwich
+  ~ person: Person
+  ~ orderDate: LocalDate
+  + getPerson(): Person
+  + toString(): String
+  + getOrderDate(): LocalDate
+  + equals(Object): boolean
+  + setOrderDate(LocalDate): void
+  + hashCode(): int
+  + setSandwich(Sandwich): void
+  + getSandwich(): Sandwich
+  + setPerson(Person): void
+}
+class OrderOfTheDay {
+  + main(String[]): void
+}
+interface OrderRepository << interface >> {
+  + statistics(): void
+  + saveOrder(Order): void
+  + formatOrder(Order): String
+  + formatTodaysOrder(Order): String
+  + printOrders(): void
+}
+class Person {
+  - firstName: String
+  - lastName: String
+  - session: Session
+  + setSession(Session): void
+  + getSession(): Session
+  + setFirstName(String): void
+  + setLastName(String): void
+  + toString(): String
+  + getFirstName(): String
+  + getLastName(): String
+  + orderSandwich(TypeOfSandwich, String, TypeOfBread, boolean): void
+}
+class PrintMenu {
+  + main(String[]): void
+}
+class Sandwich {
+  + typeOfBread: TypeOfBread
+  + sandwichPrice: double
+  + typeOfSandwich: TypeOfSandwich
+  + vegetables: boolean
+  + sandwichName: String
+  + getTypeOfSandwich(): TypeOfSandwich
+  + setTypeOfBread(TypeOfBread): void
+  + hashCode(): int
+  + getSandwichName(): String
+  + getTypeOfBread(): TypeOfBread
+  + setTypeOfSandwich(TypeOfSandwich): void
+  + isVegetables(): boolean
+  + equals(Object): boolean
+  + setVegetables(boolean): void
+  + toString(): String
+  + setSandwichName(String): void
+  + getSandwichPrice(): double
+  + setSandwichPrice(double): void
+}
+class SandwichNotFoundException
+interface SandwichRepository << interface >> {
+  + addSandwichToMenu(Sandwich): void
+  + formatSandwich(Sandwich): String
+  + deleteSandwichFromMenu(Sandwich): void
+  + printTodaysOrder(): void
+  + printMenu(): void
+}
+class Session {
+  + sessionName: String
+  + getSessionName(): String
+  + setSessionName(String): void
+  + toString(): String
+}
+class Statistics {
+  + main(String[]): void
+}
+class Student
+class TestMain {
+  + main(String[]): void
+}
+enum TypeOfBread << enumeration >> {
+  + BRUIN: 
+  + GRIS: 
+  + WIT: 
+  + BLANC: 
+  + values(): TypeOfBread[]
+  + valueOf(String): TypeOfBread
+}
+enum TypeOfSandwich << enumeration >> {
+  + SPECIALS: 
+  + VIS: 
+  + VEGETARISCHESPECIALS: 
+  + KAAS: 
+  + VLEES: 
+  + values(): TypeOfSandwich[]
+  + valueOf(String): TypeOfSandwich
+}
+class UpdateMenu {
+  + main(String[]): void
+}
+
+Accountant                     -[#000082,plain]-^  Person                        
+GeneralManager                 -[#000082,plain]-^  Person                        
+MemoryArrayOrderRepository     -[#008200,dashed]-^  OrderRepository               
+MemoryArraySandwichRepository  -[#008200,dashed]-^  SandwichRepository            
+Student                        -[#000082,plain]-^  Person                        
+@enduml
