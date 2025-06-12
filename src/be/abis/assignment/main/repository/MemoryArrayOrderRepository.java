@@ -16,7 +16,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
 
 public class MemoryArrayOrderRepository implements OrderRepository {
     public List<Order> orders = new ArrayList<>();
@@ -79,6 +81,25 @@ public void printOrders() {
         System.out.println(o.getPerson().getFirstName() + " ordered " + o.getSandwich().getSandwichName());
     }
 }
+    public void statistics() {
+        try {
+            Map<String, Long> sandwichCount = Files.lines(Paths.get(fileLocationWrite))
+                    .map(this::parseOrder)
+                    .collect(Collectors.groupingBy(
+                            order -> String.valueOf(order.getSandwich()),
+                            Collectors.counting()));
+
+
+            sandwichCount.entrySet().stream()
+                    .sorted(Map.Entry.<String, Long>comparingByValue(Comparator.reverseOrder()))
+                    .forEach(entry ->
+                            System.out.println(entry.getKey() + " was ordered " + entry.getValue() + " times.")
+                    );
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public Order parseOrder(String s) {
         String[] vals = s.split(";");
