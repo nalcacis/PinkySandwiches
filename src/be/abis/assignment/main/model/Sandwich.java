@@ -12,12 +12,11 @@ public class Sandwich {
     public String sandwichName;
     public double sandwichPrice;
 
-    public Sandwich(TypeOfSandwich typeOfSandwich, TypeOfBread typeOfBread, boolean vegetables, String sandwichName, double sandwichPrice) {
+    public Sandwich(TypeOfSandwich typeOfSandwich, TypeOfBread typeOfBread, boolean vegetables, String sandwichName) {
         this.typeOfSandwich = typeOfSandwich;
         this.typeOfBread = typeOfBread;
         this.vegetables = vegetables;
         this.sandwichName = sandwichName;
-        this.sandwichPrice = sandwichPrice;
     }
 
     public TypeOfSandwich getTypeOfSandwich() {

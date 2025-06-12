@@ -12,8 +12,7 @@ public interface SandwichRepository {
         StringBuilder sb = new StringBuilder("");
         sb.append(s.getSandwichName()).append(";")
                 .append(s.vegetables).append(";")
-                .append(s.getTypeOfBread()).append(";")
-                .append(s.getSandwichPrice());
+                .append(s.getTypeOfBread()).append(";");
         return sb.toString();
     }
 }

@@ -47,7 +47,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         //TypeOfBread typeOfBread = TypeOfBread.valueOf(vals[2]);
         //Double price = Double.parseDouble(vals[3]);
 
-        Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichType), TypeOfBread.WIT, false, title, 10);
+        Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichType), TypeOfBread.WIT, false, title);
         return s1;
     }
 
@@ -56,12 +56,12 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%s\n", "Broodjes (Pinky)");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-30s%-30s%-25s%-25s%-40s\n", "Sandwich Type", "Sandwich Name", "Groenten Ja/Nee", "Bruin/Wit", "Price");
+        System.out.printf("%-30s%-30s%-25s%-25s\n", "Sandwich Type", "Sandwich Name", "Groenten Ja/Nee", "Bruin/Wit");
         System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         //sandwiches.stream().collect(Collectors.groupingBy());
         for (Sandwich s : sandwiches) {
                 NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("nl", "BE"));
-                System.out.printf("%-30s%-25s%-25s%-25s%-50s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", nf.format(s.sandwichPrice).replaceAll("\\u00A0", ""));
+                System.out.printf("%-30s%-25s%-25s%-25s\n",s.getTypeOfSandwich(), s.sandwichName, "", "");
                 System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         }
     }

@@ -17,6 +17,7 @@ public interface OrderRepository {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/M/yyyy");
         sb.append(today.format(dtf)).append(";")
                 .append(o.getPerson().getFirstName()).append(";")
+                .append(o.getPerson().getLastName()).append(";")
                 .append(o.getSandwich().getSandwichName()).append(";");
         return sb.toString();
     }
