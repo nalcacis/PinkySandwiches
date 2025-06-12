@@ -19,10 +19,12 @@ public class TestMain {
         OrderRepository or = new MemoryArrayOrderRepository();
 
         Scanner scanInput = new Scanner(System.in);
-        System.out.println("Enter you First Name");
+        System.out.println("Enter you First Name :");
         String firstNameInput = scanInput.nextLine();
-        System.out.println("Enter you Last Name");
+        System.out.println("Enter you Last Name :");
         String lastNameInput = scanInput.nextLine();
+        System.out.println("Enter the category of the sandwich you want to order in : ");
+        String sandwichCategory = scanInput.nextLine();
 
         Accountant a1 = new Accountant(firstNameInput, lastNameInput);
         Sandwich s1 = new Sandwich(VIS, GRIS, true, "Chicken", 10);
