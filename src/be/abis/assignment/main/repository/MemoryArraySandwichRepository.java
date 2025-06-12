@@ -57,9 +57,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
         System.out.println("-------------------------------------------------------------------------------------------");
         System.out.printf("%-30s%-25s%-25s%-25s\n", "Sandwich Type", "Groenten Ja/Nee", "Bruin/Wit", "Price");
         System.out.println("-------------------------------------------------------------------------------------------");
-
         //sandwiches.stream().collect(Collectors.groupingBy());
-
         for (Sandwich s : sandwiches) {
                 System.out.printf("%-30s%-25s%-25s%-25s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", s.sandwichPrice);
                 System.out.println("-------------------------------------------------------------------------------------------");
