@@ -37,8 +37,8 @@ public abstract class Person {
         this.lastName = lastName;
     }
 
-    public void orderSandwich(TypeOfSandwich typeOfSandwich, String sandwichName, TypeOfBread typeOfBread, boolean vegetable, double sandwichPrice ) {
-        Sandwich s1 = new Sandwich(typeOfSandwich, typeOfBread, vegetable, sandwichName, sandwichPrice);
+    public void orderSandwich(TypeOfSandwich typeOfSandwich, String sandwichName, TypeOfBread typeOfBread, boolean vegetable) {
+        Sandwich s1 = new Sandwich(typeOfSandwich, typeOfBread, vegetable, sandwichName);
         Order o1 = new Order(s1,this);
     }
 

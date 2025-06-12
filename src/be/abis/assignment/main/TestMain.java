@@ -38,7 +38,7 @@ public class TestMain {
 
 
         Accountant a1 = new Accountant(firstNameInput, lastNameInput);
-        Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichCategory), TypeOfBread.valueOf(breadType), needSalad, sandwichName, 0);
+        Sandwich s1 = new Sandwich(TypeOfSandwich.valueOf(sandwichCategory), TypeOfBread.valueOf(breadType), needSalad, sandwichName);
         Order o1 = new Order(s1, a1);
         try {
             or.saveOrder(o1);
