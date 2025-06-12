@@ -18,6 +18,8 @@ public interface OrderRepository {
         sb.append(today.format(dtf)).append(";")
                 .append(o.getPerson().getFirstName()).append(";")
                 .append(o.getPerson().getLastName()).append(";")
+                .append(o.getSandwich().getTypeOfBread()).append(";")
+                .append(o.getSandwich().isVegetables()).append(";")
                 .append(o.getSandwich().getSandwichName()).append(";");
         return sb.toString();
     }
@@ -26,7 +28,7 @@ public interface OrderRepository {
         StringBuilder sb = new StringBuilder("");
         sb.append(o.getPerson().getFirstName()).append(" ordered ")
                 .append(o.getSandwich().getSandwichName()).append(" sandwich ")
-        .append((o.getSandwich().vegetables?"with salad and ":"without salad and ")).append(o.getSandwich().typeOfBread.toString().toLowerCase()).append(" brood.");
+        .append((o.getSandwich().vegetables?"with salad and ":"without salad and ")).append(o.getSandwich().getTypeOfBread().toString().toLowerCase()).append(" brood.");
         return sb.toString();
     }
 }

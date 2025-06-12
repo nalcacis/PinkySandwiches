@@ -1,21 +1,6 @@
-VLEES;Hesp;;;0.0
-VLEES;Rosbief;;;0.0
-VLEES;Parmaham;;;0.0
-VLEES;Americain prepare;;;0.0
-VLEES;Martino;;;0.0
-VLEES;Salami;;;0.0
-VLEES;Vleessla;;;0.0
-VLEES;Hesp+Kaas;;;0.0
-VLEES;Kip curry;;;0.0
-VLEES;Kipsla;;;0.0
 KAAS;Hollandse kaas;;;0.0
 KAAS;Brie;;;0.0
-VIS;Garnaalsla;;;0.0
-VIS;Tonijnsla;;;0.0
-VIS;Pikante tonijnsla;;;0.0
-VIS;Zalmsla;;;0.0
-VIS;Gerookte zalmsla;;;0.0
-VIS;Krabsla;;;0.0
+KAAS;brie2;;;0.0
 SPECIALS; Pinky (Sla, tomaat, ei, haringfilet, tartaar);;;0.0
 SPECIALS; Hawaiibrodje (Ananas, hesp, kaas, cocktailsaus);;;0.0
 SPECIALS; Florida (Sla, ananas, kipfilet, cocktailsaus);;;0.0
@@ -28,4 +13,19 @@ VEGETARISCHESPECIALS; Lentebroodje (Seldersla, wortel, ananas);;;0.0
 VEGETARISCHESPECIALS; Mozzarella (Oliifolie, zout, peper, basilicum, tomaat);;;0.0
 VEGETARISCHESPECIALS; Gezond (Sla, tomaat, seldersla, wortel, komkommer, ei, mayo);;;0.0
 VEGETARISCHESPECIALS; Vegan Broodje (Vegan currysalade, sla, tomaat, wortel, komkommer, mais, rucola, ananas);;;0.0
-KAAS;brie2;;;4.0
+VIS;Garnaalsla;;;0.0
+VIS;Tonijnsla;;;0.0
+VIS;Pikante tonijnsla;;;0.0
+VIS;Zalmsla;;;0.0
+VIS;Gerookte zalmsla;;;0.0
+VIS;Krabsla;;;0.0
+VLEES;Hesp;;;0.0
+VLEES;Rosbief;;;0.0
+VLEES;Parmaham;;;0.0
+VLEES;Americain prepare;;;0.0
+VLEES;Martino;;;0.0
+VLEES;Salami;;;0.0
+VLEES;Vleessla;;;0.0
+VLEES;Hesp+Kaas;;;0.0
+VLEES;Kip curry;;;0.0
+VLEES;Kipsla;;;0.0

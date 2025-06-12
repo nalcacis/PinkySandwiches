@@ -10,7 +10,18 @@ public class Sandwich {
     public TypeOfBread typeOfBread;
     public boolean vegetables;
     public String sandwichName;
+
+    public Sandwich(TypeOfBread typeOfBread, boolean vegetables, String sandwichName) {
+        this.typeOfBread = typeOfBread;
+        this.vegetables = vegetables;
+        this.sandwichName = sandwichName;
+    }
+
     public double sandwichPrice;
+
+    public Sandwich(String sandwichName) {
+        this.sandwichName = sandwichName;
+    }
 
     public Sandwich(TypeOfSandwich typeOfSandwich, String sandwichName, double sandwichPrice) {
         this.typeOfSandwich = typeOfSandwich;

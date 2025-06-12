@@ -76,7 +76,7 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
     public void deleteSandwichFromMenu(Sandwich sandwich) {
         sandwiches.stream().filter(sandwich1 -> sandwich1.equals(sandwich))
                 .findFirst()
-                .orElseThrow(()->new SandwichNotFoundException("Sandwich not found in the Menu"));
+                .orElseThrow(()->new SandwichNotFoundException("\n\nSandwich not found in the Menu"));
 
         try (BufferedWriter bwNew = Files.newBufferedWriter(Paths.get(fileLocation), StandardCharsets.UTF_8)) {
             Iterator<Sandwich> iter = sandwiches.iterator();

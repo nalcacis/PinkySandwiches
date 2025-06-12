@@ -68,7 +68,7 @@ public void saveOrder(Order o) throws MaxSandwitchPerDayException {
             System.out.println(e.getMessage());
         }
     } else {
-        throw new MaxSandwitchPerDayException("Max sandwich per day");
+        throw new MaxSandwitchPerDayException("\n\n You cannot order more than 2 sandwiches per day");
     }
 }
 
@@ -107,8 +107,11 @@ public void printOrders() {
         String date = vals[0];
         String firstName = vals[1];
         String lastName = vals[2];
-        String sandwichName = vals[3];
-        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName), new Person(firstName, lastName));
+        String typeOfBread = vals[3];
+        boolean vegetable = Boolean.parseBoolean(vals[4]);
+        String sandwichName = vals[5];
+        Sandwich sandwich1 = new Sandwich(TypeOfBread.valueOf(typeOfBread),vegetable,sandwichName);
+        Order order1 = new Order(LocalDate.parse(date, dtf), sandwich1, new Person(firstName, lastName));
         return order1;
     }
 }

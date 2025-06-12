@@ -30,6 +30,7 @@ public class UpdateMenu {
                 SandwichRepository sr = new MemoryArraySandwichRepository();
                 Sandwich s2 = new Sandwich(TypeOfSandwich.valueOf(sandwichCategory), sandwichName, sandwichPrice);
                 sr.addSandwichToMenu(s2);
+                System.out.println("\n\n sandwich added successfully to the Menu !!!\n\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -39,6 +40,7 @@ public class UpdateMenu {
                 Sandwich s2 = new Sandwich(TypeOfSandwich.valueOf(sandwichCategory), sandwichName);
                 try {
                     sr.deleteSandwichFromMenu(s2);
+                    System.out.println("\n\n sandwich removed successfully from the Menu !!!\n\n");
                 } catch (SandwichNotFoundException e) {
                     System.out.println(e.getMessage());
                 }

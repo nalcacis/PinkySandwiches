@@ -37,6 +37,8 @@ public class TestMain {
         Order o1 = new Order(s1, a1);
         try {
             or.saveOrder(o1);
+            System.out.println("\nThank you for the order !!!");
+            System.out.println("Your order is placed");
         } catch (MaxSandwitchPerDayException e) {
             System.out.println(e.getMessage());
         }
