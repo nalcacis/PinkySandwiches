@@ -70,9 +70,10 @@ public class MemoryArrayOrderRepository implements OrderRepository {
         String[] vals = s.split(";");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/M/yyyy");
         String date = vals[0];
-        String firstname = vals[1];
-        String sandwichName = vals[2];
-        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstname, "test", new Session("JAVA")));
+        String firstName = vals[1];
+        String lastName = vals[2];
+        String sandwichName = vals[3];
+        Order order1 = new Order(LocalDate.parse(date, dtf), new Sandwich(TypeOfSandwich.FROMAGE, TypeOfBread.GRIS, true, sandwichName, 0.00), new Student(firstName, lastName, new Session("JAVA")));
         return order1;
     }
 }

@@ -55,7 +55,7 @@ public class Order {
         //if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return Objects.equals(orderDate, order.orderDate) && Objects.equals(person.getFirstName(), order.person.getFirstName())  ;
+        return Objects.equals(orderDate, order.orderDate) && Objects.equals(person.getFirstName(), order.person.getFirstName()) && Objects.equals(person.getLastName(), order.person.getLastName())  ;
     }
 
     @Override
