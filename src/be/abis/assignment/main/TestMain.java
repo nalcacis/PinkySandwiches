@@ -8,6 +8,7 @@ import be.abis.assignment.main.repository.MemoryArrayOrderRepository;
 import be.abis.assignment.main.repository.OrderRepository;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import static be.abis.assignment.main.enumeration.TypeOfBread.BLANC;
 import static be.abis.assignment.main.enumeration.TypeOfBread.GRIS;
@@ -16,7 +17,14 @@ import static be.abis.assignment.main.enumeration.TypeOfSandwich.VIS;
 public class TestMain {
     public static void main(String[] args) {
         OrderRepository or = new MemoryArrayOrderRepository();
-        Accountant a1 = new Accountant("hello", "kitty");
+
+        Scanner scanInput = new Scanner(System.in);
+        System.out.println("Enter you First Name");
+        String firstNameInput = scanInput.nextLine();
+        System.out.println("Enter you Last Name");
+        String lastNameInput = scanInput.nextLine();
+
+        Accountant a1 = new Accountant(firstNameInput, lastNameInput);
         Sandwich s1 = new Sandwich(VIS, GRIS, true, "Chicken", 10);
         Order o1 = new Order(s1, a1);
         try {
