@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -52,15 +53,16 @@ public class MemoryArraySandwichRepository implements SandwichRepository {
 
     public void printMenu() {
         StringBuilder sb = new StringBuilder("");
-        System.out.println("-------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%s\n", "Broodjes (Pinky)");
-        System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.printf("%-30s%-25s%-25s%-25s\n", "Sandwich Type", "Groenten Ja/Nee", "Bruin/Wit", "Price");
-        System.out.println("-------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-30s%-30s%-25s%-25s%-40s\n", "Sandwich Type", "Sandwich Name", "Groenten Ja/Nee", "Bruin/Wit", "Price");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         //sandwiches.stream().collect(Collectors.groupingBy());
         for (Sandwich s : sandwiches) {
-                System.out.printf("%-30s%-25s%-25s%-25s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", s.sandwichPrice);
-                System.out.println("-------------------------------------------------------------------------------------------");
+                NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("nl", "BE"));
+                System.out.printf("%-30s%-25s%-25s%-25s%-50s\n",s.getTypeOfSandwich(), s.sandwichName, "", "", nf.format(s.sandwichPrice).replaceAll("\\u00A0", ""));
+                System.out.println("-------------------------------------------------------------------------------------------------------------------------------");
         }
     }
 

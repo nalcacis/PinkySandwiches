@@ -1,30 +1,30 @@
-VLEES;Hesp; ; ;
-VLEES;Rosbief; ; ;
-VLEES;Parmaham; ; ;
-VLEES;Americain prepare; ; ;
-VLEES;Martino; ; ;
-VLEES;Salami; ; ;
-VLEES;Vleessla; ; ;
-VLEES;Hesp+Kaas; ; ;
-VLEES;Kip curry; ; ;
-VLEES;Kipsla; ; ;
-KAAS;Hollandse kaas; ; ;
-KAAS;Brie; ; ;
-VIS;Garnaalsla; ; ;
-VIS;Tonijnsla; ; ;
-VIS;Pikante tonijnsla; ; ;
-VIS;Zalmsla; ; ;
-VIS;Gerookte zalmsla; ; ;
-VIS;Krabsla; ; ;
-SPECIALS; Pinky (Sla, tomaat, ei, haringfilet, tartaar); ; ;
-SPECIALS; Hawaiibrodje (Ananas, hesp, kaas, cocktailsaus); ; ;
-SPECIALS; Florida (Sla, ananas, kipfilet, cocktailsaus); ; ;
-SPECIALS; Primus (Sla, perzik, tonijnsla); ; ;
-SPECIALS; Milano (Sla, tomaat, augurk, ei, salami, tartaar); ; ;
-SPECIALS; Ardenne (Rucola, tomaat, parmaham, cocktailsaus); ; ;
-VEGETARISCHESPECIALS; Maya (Rucola, brie, honing, perzik); ; ;
-VEGETARISCHESPECIALS; Broodje geitenkaas (Geitenkaas, honing, walnoten, rucola); ; ;
-VEGETARISCHESPECIALS; Lentebroodje (Seldersla, wortel, ananas); ; ;
-VEGETARISCHESPECIALS; Mozzarella (Oliifolie, zout, peper, basilicum, tomaat); ; ;
-VEGETARISCHESPECIALS; Gezond (Sla, tomaat, seldersla, wortel, komkommer, ei, mayo); ; ;
-VEGETARISCHESPECIALS; Vegan Broodje (Vegan currysalade, sla, tomaat, wortel, komkommer, mais, rucola, ananas); ; ;
+VLEES;Hesp; ; ;10.0
+VLEES;Rosbief; ; ;10.0
+VLEES;Parmaham; ; ;10.0
+VLEES;Americain prepare; ; ;10.0
+VLEES;Martino; ; ;10.0
+VLEES;Salami; ; ;10.0
+VLEES;Vleessla; ; ;10.0
+VLEES;Hesp+Kaas; ; ;10.0
+VLEES;Kip curry; ; ;10.0
+VLEES;Kipsla; ; ;10.0
+KAAS;Hollandse kaas; ; ;10.0
+KAAS;Brie; ; ;10.0
+VIS;Garnaalsla; ; ;10.0
+VIS;Tonijnsla; ; ;10.0
+VIS;Pikante tonijnsla; ; ;10.0
+VIS;Zalmsla; ; ;10.0
+VIS;Gerookte zalmsla; ; ;10.0
+VIS;Krabsla; ; ;10.0
+SPECIALS; Pinky (Sla, tomaat, ei, haringfilet, tartaar); ; ;10.0
+SPECIALS; Hawaiibrodje (Ananas, hesp, kaas, cocktailsaus); ; ;10.0
+SPECIALS; Florida (Sla, ananas, kipfilet, cocktailsaus); ; ;10.0
+SPECIALS; Primus (Sla, perzik, tonijnsla); ; ;10.0
+SPECIALS; Milano (Sla, tomaat, augurk, ei, salami, tartaar); ; ;10.0
+SPECIALS; Ardenne (Rucola, tomaat, parmaham, cocktailsaus); ; ;10.0
+VEGETARISCHESPECIALS; Maya (Rucola, brie, honing, perzik); ; ;10.0
+VEGETARISCHESPECIALS; Broodje geitenkaas (Geitenkaas, honing, walnoten, rucola); ; ;10.0
+VEGETARISCHESPECIALS; Lentebroodje (Seldersla, wortel, ananas); ; ;10.0
+VEGETARISCHESPECIALS; Mozzarella (Oliifolie, zout, peper, basilicum, tomaat); ; ;10.0
+VEGETARISCHESPECIALS; Gezond (Sla, tomaat, seldersla, wortel, komkommer, ei, mayo); ; ;10.0
+VEGETARISCHESPECIALS; Vegan Broodje (Vegan currysalade, sla, tomaat, wortel, komkommer, mais, rucola, ananas); ; ;10.0
