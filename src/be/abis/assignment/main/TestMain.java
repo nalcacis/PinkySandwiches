@@ -22,7 +22,7 @@ public class TestMain {
         try {
             or.saveOrder(o1);
         } catch (MaxSandwitchPerDayException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
 
         //Person p1 = new Student("hello1", "kitty1", new Session("JAVA"));
