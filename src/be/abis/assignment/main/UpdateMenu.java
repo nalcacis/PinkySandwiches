@@ -1,6 +1,7 @@
 package be.abis.assignment.main;
 
-import be.abis.assignment.main.enumeration.TypeOfSandwich;
+import be.abis.assignment.main.enumeration.*;
+import be.abis.assignment.main.exceptions.SandwichNotFoundException;
 import be.abis.assignment.main.model.Sandwich;
 import be.abis.assignment.main.repository.MemoryArraySandwichRepository;
 import be.abis.assignment.main.repository.SandwichRepository;
@@ -8,7 +9,6 @@ import be.abis.assignment.main.repository.SandwichRepository;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static be.abis.assignment.main.enumeration.TypeOfBread.BLANC;
 
 public class UpdateMenu {
     public static void main(String[] args) {
@@ -37,7 +37,11 @@ public class UpdateMenu {
             try {
                 SandwichRepository sr = new MemoryArraySandwichRepository();
                 Sandwich s2 = new Sandwich(TypeOfSandwich.valueOf(sandwichCategory), sandwichName);
-                sr.deleteSandwichFromMenu(s2);
+                try {
+                    sr.deleteSandwichFromMenu(s2);
+                } catch (SandwichNotFoundException e) {
+                    System.out.println(e.getMessage());
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
