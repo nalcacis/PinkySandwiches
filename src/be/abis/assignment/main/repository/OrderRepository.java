@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 public interface OrderRepository {
     public void saveOrder(Order o) throws MaxSandwitchPerDayException;
-
+    public void statistics();
     public void printOrders();
 
     static String formatOrder(Order o) {
