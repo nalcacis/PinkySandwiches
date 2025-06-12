@@ -26,7 +26,7 @@ public interface OrderRepository {
         StringBuilder sb = new StringBuilder("");
         sb.append(o.getPerson().getFirstName()).append(" ordered ")
                 .append(o.getSandwich().getSandwichName()).append(" sandwich ")
-        .append((o.getSandwich().vegetables?"with salad ":"without salad ")).append(o.getSandwich().typeOfBread.toString().toLowerCase()).append(" brood.");
+        .append((o.getSandwich().vegetables?"with salad and ":"without salad and ")).append(o.getSandwich().typeOfBread.toString().toLowerCase()).append(" brood.");
         return sb.toString();
     }
 }

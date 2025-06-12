@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Person {
+public class Person {
     private String firstName;
     private String lastName;
     private Session session;
