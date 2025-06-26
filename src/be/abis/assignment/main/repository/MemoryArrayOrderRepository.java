@@ -58,6 +58,8 @@ public class MemoryArrayOrderRepository implements OrderRepository {
 public void saveOrder(Order o) throws MaxSandwitchPerDayException {
     long count = orders.stream()
             .filter(order -> order.equals(o))
+            //not a good idea to implement .equals here, its a misuse of equals
+            //instead use filters
             .count();
     if (count < 2) {
         orders.add(o);
